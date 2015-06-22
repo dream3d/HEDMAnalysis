@@ -49,6 +49,9 @@
 
 #include "DREAM3DLib/FilterParameters/AbstractFilterParametersReader.h"
 #include "DREAM3DLib/FilterParameters/AbstractFilterParametersWriter.h"
+
+#include "DREAM3DLib/FilterParameters/InputFileFilterParameter.h"
+#include "DREAM3DLib/FilterParameters/StringFilterParameter.h"
 #include "DREAM3DLib/FilterParameters/FileSystemFilterParameter.h"
 #include "DREAM3DLib/FilterParameters/SeparatorFilterParameter.h"
 
@@ -138,14 +141,10 @@ void ReadMicData::setupFilterParameters()
   FilterParameterVector parameters;
 
   parameters.push_back(InputFileFilterParameter::New("Input File", "InputFile", getInputFile(), FilterParameter::Parameter, "", "*.mic"));
-@@@@INCLUDE #include "DREAM3DLib/FilterParameters/InputFileFilterParameter.h"
 
   parameters.push_back(StringFilterParameter::New("Data Container Name", "DataContainerName", getDataContainerName(), FilterParameter::CreatedArray));
-@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h"
   parameters.push_back(StringFilterParameter::New("Cell Attribute Matrix Name", "CellAttributeMatrixName", getCellAttributeMatrixName(), FilterParameter::CreatedArray));
-@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h"
   parameters.push_back(StringFilterParameter::New("Cell Ensemble Attribute Matrix Name", "CellEnsembleAttributeMatrixName", getCellEnsembleAttributeMatrixName(), FilterParameter::CreatedArray));
-@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h"
 
   setFilterParameters(parameters);
 }
