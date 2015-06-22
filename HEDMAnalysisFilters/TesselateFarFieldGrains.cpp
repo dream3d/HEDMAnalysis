@@ -309,17 +309,27 @@ void TesselateFarFieldGrains::setupFilterParameters()
 
   parameters.push_back(FileListInfoFilterParameter::New("Feature Input File List", "FeatureInputFileListInfo", getFeatureInputFileListInfo(), FilterParameter::Parameter));
 
-  parameters.push_back(FilterParameter::New("Mask Array", "MaskArrayPath", FilterParameterWidgetType::DataArraySelectionWidget, getMaskArrayPath(), FilterParameter::RequiredArray));
+  parameters.push_back(DataArraySelectionFilterParameter::New("Mask Array", "MaskArrayPath", getMaskArrayPath(), FilterParameter::RequiredArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/DataArraySelectionFilterParameter.h");
 
-  parameters.push_back(FilterParameter::New("Cell Attribute Matrix Name", "OutputCellAttributeMatrixName", FilterParameterWidgetType::AttributeMatrixSelectionWidget, getOutputCellAttributeMatrixName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Cell Feature Attribute Matrix Name", "OutputCellFeatureAttributeMatrixName", FilterParameterWidgetType::StringWidget, getOutputCellFeatureAttributeMatrixName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Cell Ensemble Attribute Matrix Name", "OutputCellEnsembleAttributeMatrixName", FilterParameterWidgetType::StringWidget, getOutputCellEnsembleAttributeMatrixName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Feature Ids Array Name", "FeatureIdsArrayName", FilterParameterWidgetType::StringWidget, getFeatureIdsArrayName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Cell Phases Array Name", "CellPhasesArrayName", FilterParameterWidgetType::StringWidget, getCellPhasesArrayName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Feature Phases Array Name", "FeaturePhasesArrayName", FilterParameterWidgetType::StringWidget, getFeaturePhasesArrayName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Feature Euler Angles Array Name", "FeatureEulerAnglesArrayName", FilterParameterWidgetType::StringWidget, getFeatureEulerAnglesArrayName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Feature Elastic Strains Array Name", "ElasticStrainsArrayName", FilterParameterWidgetType::StringWidget, getElasticStrainsArrayName(), FilterParameter::CreatedArray));
-  parameters.push_back(FilterParameter::New("Crystal Structures Array Name", "CrystalStructuresArrayName", FilterParameterWidgetType::StringWidget, getCrystalStructuresArrayName(), FilterParameter::CreatedArray));
+  parameters.push_back(AttributeMatrixSelectionFilterParameter::New("Cell Attribute Matrix Name", "OutputCellAttributeMatrixName", getOutputCellAttributeMatrixName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/AttributeMatrixSelectionFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Cell Feature Attribute Matrix Name", "OutputCellFeatureAttributeMatrixName", getOutputCellFeatureAttributeMatrixName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Cell Ensemble Attribute Matrix Name", "OutputCellEnsembleAttributeMatrixName", getOutputCellEnsembleAttributeMatrixName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Feature Ids Array Name", "FeatureIdsArrayName", getFeatureIdsArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Cell Phases Array Name", "CellPhasesArrayName", getCellPhasesArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Feature Phases Array Name", "FeaturePhasesArrayName", getFeaturePhasesArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Feature Euler Angles Array Name", "FeatureEulerAnglesArrayName", getFeatureEulerAnglesArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Feature Elastic Strains Array Name", "ElasticStrainsArrayName", getElasticStrainsArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
+  parameters.push_back(StringFilterParameter::New("Crystal Structures Array Name", "CrystalStructuresArrayName", getCrystalStructuresArrayName(), FilterParameter::CreatedArray)
+@@@@INCLUDE #include "DREAM3DLib/FilterParameters/StringFilterParameter.h");
 
   setFilterParameters(parameters);
 }
