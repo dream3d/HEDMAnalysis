@@ -43,7 +43,6 @@
 #include <tbb/blocked_range3d.h>
 #include <tbb/parallel_for.h>
 #include <tbb/partitioner.h>
-#include <tbb/task_scheduler_init.h>
 #endif
 
 #include <QtCore/QDir>
@@ -581,10 +580,10 @@ void TesselateFarFieldGrains::dataCheck()
 void TesselateFarFieldGrains::preflight()
 {
   setInPreflight(true);
-  emit preflightAboutToExecute();
-  emit updateFilterParameters(this);
+  Q_EMIT preflightAboutToExecute();
+  Q_EMIT updateFilterParameters(this);
   dataCheck();
-  emit preflightExecuted();
+  Q_EMIT preflightExecuted();
 
   bool hasMissingFiles = false;
   bool orderAscending = false;
@@ -897,8 +896,7 @@ void TesselateFarFieldGrains::assign_voxels()
   };
 
 #ifdef SIMPL_USE_PARALLEL_ALGORITHMS
-  tbb::task_scheduler_init init;
-  bool doParallel = true;
+    bool doParallel = true;
 #endif
 
   int64_t column, row, plane;

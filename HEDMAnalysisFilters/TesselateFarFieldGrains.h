@@ -210,7 +210,7 @@ class HEDMAnalysis_EXPORT TesselateFarFieldGrains : public AbstractFilter
      */
     void execute() override;
 
-  signals:
+  Q_SIGNALS:
     void updateFilterParameters(AbstractFilter* filter);
     void parametersChanged();
     void preflightAboutToExecute();
